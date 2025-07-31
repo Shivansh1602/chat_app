@@ -70,69 +70,78 @@ final ThemeData funkyChatLightTheme = ThemeData(
   ),
 );
 
-final ThemeData funkyChatDarkNeonLightTheme = ThemeData(
-  brightness: Brightness.light,
+final ThemeData chatpodiaFuturisticTheme = ThemeData(
+  brightness: Brightness.dark,
   useMaterial3: true,
-  fontFamily: GoogleFonts.urbanist().fontFamily,   // Try 'Urbanist', 'Montserrat', or 'Space Grotesk'
-  colorScheme: ColorScheme.light(
-    primary: Color(0xFF1FE6A5),        // Neon Mint
-    secondary: Color(0xFFFF5E62),      // Vibrant Coral-Pink
-    background: Color(0xFF0D1B2A),     // !!! Deep Neon Futuristic Blue !!!
-    surface: Color(0xFF1A2438),        // Slightly lighter blue/grey for cards
+  fontFamily: GoogleFonts.poppins().fontFamily,
+  colorScheme: ColorScheme.dark(
+    primary: Color(0xFF6DE3FA),            // Soft neon cyan (for highlights, bubbles)
+    secondary: Color(0xFF51FFA6),          // Minty green accent (buttons, toggles)
+    background: Color(0xFF161821),         // Rich, almost-black blue
+    surface: Color(0xFF222339),            // Slightly lighter for cards, fields, messages
     onPrimary: Colors.black,
-    onSecondary: Colors.white,
-    onSurface: Color(0xFFD3DCE6),      // Light Neon Text
-    onBackground: Color(0xFFD3DCE6),
+    onSecondary: Colors.black,
+    onSurface: Color(0xFFD6E4F0),          // Whisper white-blue text
+    onBackground: Color(0xFFE9FFF9),
   ),
-  scaffoldBackgroundColor: Color(0xFF0D1B2A),
+  scaffoldBackgroundColor: Color(0xFF161821), // Deep, restful background
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.transparent,
     elevation: 0,
     centerTitle: true,
-    iconTheme: IconThemeData(color: Color(0xFFD3DCE6)),
+    iconTheme: IconThemeData(color: Color(0xFF6DE3FA)),
     titleTextStyle: TextStyle(
+      fontFamily: GoogleFonts.poppins().fontFamily,
       fontSize: 22,
-      fontWeight: FontWeight.w800,
-      letterSpacing: 1.3,
-      color: Color(0xFFD3DCE6),
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1.2,
+      color: Color(0xFFCAF1FB),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: Color(0xFF1A2438),  // Glassy neon card
-    hintStyle: TextStyle(color: Color(0xFF8A94A6)),
-    contentPadding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
+    fillColor: Color(0xFF23243A).withOpacity(0.8), // Glassy, cool input fields
+    hintStyle: TextStyle(color: Color(0xFF98A7B9)),
+    contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
-      borderSide: BorderSide(color: Color(0xFF1FE6A5)),
+      borderRadius: BorderRadius.circular(18),
+      borderSide: BorderSide(color: Color(0xFF6DE3FA), width: 1.5),
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
-      borderSide: BorderSide(color: Color(0xFFFF5E62), width: 2),
+      borderRadius: BorderRadius.circular(18),
+      borderSide: BorderSide(color: Color(0xFF51FFA6), width: 2),
     ),
   ),
   cardTheme: CardThemeData(
-    color: Color(0xFF1A2438).withOpacity(0.92),
-    elevation: 7,
-    shadowColor: Color(0x44FF5E62),
+    color: Color(0xFF23243A).withOpacity(0.92),
+    elevation: 9,
+    shadowColor: Color(0x3D6DE3FA),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(22),
     ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: const Color(0xFFFF5E62),
-      foregroundColor: Colors.white,
-      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 1.3),
-      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 15),
+      backgroundColor: const Color(0xFF6DE3FA),
+      foregroundColor: Colors.black,
+      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(16),
       ),
-      shadowColor: const Color(0x331FE6A5),
-      elevation: 8,
+      shadowColor: const Color(0x6651FFA6),
+      elevation: 7,
+    ),
+  ),
+  dialogTheme: DialogThemeData(
+    backgroundColor: Color(0xFF222339).withOpacity(0.92),
+    elevation: 15,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(24),
     ),
   ),
 );
+
 
 
 
@@ -149,7 +158,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       theme: funkyChatLightTheme,
-  darkTheme: funkyChatDarkNeonLightTheme,
+  darkTheme: chatpodiaFuturisticTheme,
   themeMode: ThemeMode.system,
       title: 'FlutterChat',
  
